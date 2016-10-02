@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+    
+<config xmlns:xsi="http://www.w3.org/2001/"
+xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+<module name="Smart_Hello" schema_version="2.0.0" setup_version="2.0.0"/>
+</config>

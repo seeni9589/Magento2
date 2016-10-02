@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+layout="1column"
+>
+<body>
+    <referenceContainer name="content">
+        <block class="Smart\Hello\Block\Hello" name="hello" template="success.phtml">
+        </block>
+    </referenceContainer>
+</body>
+</page>

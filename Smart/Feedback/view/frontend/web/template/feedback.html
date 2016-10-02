@@ -1,0 +1,55 @@
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div>
+    <!-- ko ifnot: msgSaved -->
+    <form method="post" class="feedback" id="feedback" data-bind="submit: submitFeedback">
+        <fieldset class="fieldset">
+            <legend class="legend"><span><p data-bind="i18n: 'You can post your feedback here.'"></p></span></legend><br>
+            <div class="field name required">
+                <label for="name" class="label"><span>Name</span></label>
+                <div class="control">
+                    <input type="text" data-validate="{required:true}" 
+                           class="input-text" title="Name" 
+                           id="user_name" aria-required="true" 
+                           data-bind="value:uname,attr: {'data-validate': JSON.stringify({required:true})},
+                                        ">
+                </div>
+            </div>
+            <div class="field email required">
+                <label for="email" class="label"><span>Email</span></label>
+                <div class="control">
+                    <input type="email" data-validate="{required:true, 'validate-email':true}" class="input-text" value="" title="Email" id="email" aria-required="true"
+                           data-bind="value:email">
+                </div>
+            </div>
+            <div class="field telephone">
+                <label for="telephone" class="label"><span>Phone Number</span></label>
+                <div class="control">
+                    <input type="text" class="input-text" value="" title="Phone Number" id="telephone" data-bind="value:phone">
+                </div>
+            </div>
+            <div class="field comment required">
+                <label for="comment" class="label"><span>Feedback message</span></label>
+                <div class="control">
+                    <textarea data-validate="{required:true}" rows="3" cols="5" class="input-text" title="What’s on your mind?" id="comment" name="comment" aria-required="true"
+                              data-bind="value:msg"></textarea>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" value="" id="hideit" name="hideit">
+                <input type="submit" class="action primary" data-bind="value: $t('Submit Feedback')" />
+            </div>
+        </div>
+    </form>
+    <!-- /ko -->
+
+    <!-- ko if: msgSaved -->
+    <p data-bind="i18n: 'Feedback message posted for review.'"></p>
+    <!-- /ko -->
+</div>
