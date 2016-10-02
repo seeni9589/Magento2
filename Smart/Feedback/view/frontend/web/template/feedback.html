@@ -6,7 +6,7 @@
 -->
 <div>
     <!-- ko ifnot: msgSaved -->
-    <form method="post" class="feedback" id="feedback" data-bind="submit: submitFeedback">
+    <form method="post" class="feedback" id="feedback-form" data-role="feedback-form" data-bind="submit: submitFeedback">
         <fieldset class="fieldset">
             <legend class="legend"><span><p data-bind="i18n: 'You can post your feedback here.'"></p></span></legend><br>
             <div class="field name required">
@@ -22,8 +22,8 @@
             <div class="field email required">
                 <label for="email" class="label"><span>Email</span></label>
                 <div class="control">
-                    <input type="email" data-validate="{required:true, 'validate-email':true}" class="input-text" value="" title="Email" id="email" aria-required="true"
-                           data-bind="value:email">
+                    <input type="email" data-validate="{required:true}" data-bind="value:email,attr: {'data-validate': JSON.stringify({required:true,'validate-email':true})},
+                                        " class="input-text" title="Email" id="email" aria-required="true" >
                 </div>
             </div>
             <div class="field telephone">

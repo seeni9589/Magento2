@@ -20,7 +20,6 @@ define([
         defaults: {
             msgSaved: false,
             template: 'Smart_Feedback/feedback',
-            feedbackForm: '#feedback',
         },
         /** Initialize observable properties */
         initObservable: function () {
@@ -37,10 +36,8 @@ define([
          * Validate feedback form
          */
         validateForm: function () {
-            if (this.element.data('mageValidation')) {
-                return this.element.validation().valid();
-            }
-            return true;
+            var form = '#feedback-form';
+            return $(form).validation() && $(form).validation('isValid');
         },
         submitFeedback: function () {
             /* $.ajax(this.getFeedbackUrl).done(
@@ -48,7 +45,9 @@ define([
              this.msgSaved(true)
              }.bind(this)
              );*/
-
+            if (!this.validateForm()) {
+             return;
+             }
             var data = {'name':this.uname(),'email':this.email(),'phone':this.phone(),'message':this.msg(),'status':0};
            // if(this.validateForm()){
                  
